@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="Style.css" rel="stylesheet" type="text/css">
+    <style>
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .dark_mauve{
+            background-color: #874C62;
+        }
+        .old_lavender{
+            background-color: #796878;
+        }
+        .firefly{
+            background-color: #0E2A30;
+        }
+        .pink{
+            color: pink;
+        }
+        .teal{
+            color: teal;
+        }
+        .purple{
+            color: purple;
+        }
+        .pale_copper{
+            color: #DC8073;
+        }
+        .pastel_purple{
+            color: #B39EB5;
+        }
+        .blue_lagoon{
+            color: #8EEBEC;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Diam quis enim lobortis scelerisque fermentum dui faucibus. Cras fermentum odio eu feugiat pretium
+            nibh ipsum consequat nisl. Sed lectus vestibulum mattis ullamcorper. Suspendisse ultrices gravida dictum fusce.
+            Ut pharetra sit amet aliquam. Felis bibendum ut tristique et egestas quis ipsum. Lectus nulla at volutpat diam
+            ut. Adipiscing elit pellentesque habitant morbi tristique senectus et netus et. Vulputate enim nulla aliquet
+            porttitor lacus luctus. Lacinia quis vel eros donec ac. Vitae justo eget magna fermentum iaculis. Proin libero
+            nunc consequat interdum.</p>
+        <div class="row">
+            <h3>Background</h3>
+            <button id='1'>RED</button>
+            <button id="2">GREEN</button>
+            <button id="3">BLUE</button>
+            <button id="7">DARK MAUVE</button>
+            <button id="8">OLD LAVENDER</button>
+            <button id="9">FIREFLY</button>
+        </div>
+        <div class="row">
+            <h3>Text</h3>
+            <button id="4">PINK</button>
+            <button id="5">TEAL</button>
+            <button id="6">PURPLE</button>
+            <button id="10">PALE COPPER</button>
+            <button id="11">PASTEL PURPLE</button>
+            <button id="12">BLUE LAGOON</button>
+        </div>
+        <button id="clear">CLEAR</button>
+    </div>
+</div>
+<script>
+    const content = document.querySelector('.content')
+    const red = document.getElementById('1')
+    const green = document.getElementById('2')
+    const blue = document.getElementById('3')
+    const dark_mauve = document.getElementById('7')
+    const old_lavender = document.getElementById('8')
+    const firefly = document.getElementById('9')
+
+    const pink = document.getElementById('4')
+    const teal = document.getElementById('5')
+    const purple = document.getElementById('6')
+    const pale_copper = document.getElementById('10')
+    const pastel_purple = document.getElementById('11')
+    const blue_lagoon = document.getElementById('12')
+
+    const clearButton = document.getElementById('clear')
+
+    red.addEventListener('click', function(){
+        removeBGColor();
+        content.classList.add('red');
+    });
+
+
+    green.addEventListener('click', function(){
+        removeBGColor();
+        content.classList.add('green');
+    });
+
+
+    blue.addEventListener('click', function(){
+        removeBGColor();
+        content.classList.add('blue');
+    });
+
+
+    dark_mauve.addEventListener('click', function(){
+        removeBGColor();
+        content.classList.add('dark_mauve');
+    });
+
+
+    old_lavender.addEventListener('click', function(){
+        removeBGColor();
+        content.classList.add('old_lavender');
+    });
+
+
+    firefly.addEventListener('click', function(){
+        removeBGColor();
+        content.classList.add('firefly');
+    });
+
+
+    pink.addEventListener('click', function(){
+        removeTextColor();
+        content.classList.add('pink');
+    });
+
+
+    teal.addEventListener('click', function(){
+        removeTextColor();
+        content.classList.add('teal');
+    });
+
+
+    purple.addEventListener('click', function(){
+        removeTextColor();
+        content.classList.add('purple');
+    });
+
+
+    pale_copper.addEventListener('click', function(){
+        removeTextColor();
+        content.classList.add('pale_copper');
+    });
+
+
+    pastel_purple.addEventListener('click', function(){
+        removeTextColor();
+        content.classList.add('pastel_purple');
+    });
+
+
+    blue_lagoon.addEventListener('click', function(){
+        removeTextColor();
+        content.classList.add('blue_lagoon');
+    });
+
+    function removeBGColor(){
+        content.classList.remove('red')
+        content.classList.remove('green')
+        content.classList.remove('blue')
+        content.classList.remove('dark_mauve')
+        content.classList.remove('old_lavender')
+        content.classList.remove('firefly')
+
+    }
+    clearButton.addEventListener('click', function (){
+        removeTextColor();
+        removeBGColor();
+    });
+    function removeTextColor(){
+        content.classList.remove('pink')
+        content.classList.remove('teal')
+        content.classList.remove('purple')
+        content.classList.remove('pale_copper')
+        content.classList.remove('pastel_purple')
+        content.classList.remove('blue_lagoon')
+
+    }
+</script>
+</body>
+</html>
