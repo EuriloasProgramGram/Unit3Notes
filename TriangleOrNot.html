@@ -42,14 +42,14 @@
   const calculateButton = document.getElementById('calc');
   const clearButton = document.getElementById('clear');
 
-  clearButton.addEventListener('click', function(e){
+  clearButton.addEventListener('click', function(){
     a.value = " ";
     b.value = " ";
     c.value = " ";
     ans.textContent = "";
     ans.classList.add("hidden")
   })
-  calculateButton.addEventListener('click', function(e){
+  calculateButton.addEventListener('click', function(){
     let sideA = +a.value;
     let sideB = +b.value;
     let sideC = +c.value;

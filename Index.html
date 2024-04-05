@@ -29,19 +29,19 @@
         e.stopPropagation();
 
     })
-    parentElement.addEventListener('click', function (e){
+    parentElement.addEventListener('click', function (){
         console.log('You clicked on the parent containing div.')
     })
-    buttonElement.addEventListener('mouseover', function (e){
+    buttonElement.addEventListener('mouseover', function (){
         console.log('Your mouse is on the button')
     });
-    buttonElement.addEventListener('mouseout', function (e){
+    buttonElement.addEventListener('mouseout', function (){
         console.log('Your mouse is no longer on the button')
     });
-    inputElement.addEventListener('focus', function (e){
+    inputElement.addEventListener('focus', function (){
         console.log('you focused on the input!')
     });
-    inputElement.addEventListener('blur', function (e){
+    inputElement.addEventListener('blur', function (){
         console.log('you stopped focusing on the input!')
     });
     document.addEventListener('keydown', function (e){
