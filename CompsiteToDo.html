@@ -90,28 +90,15 @@
     let descriptionTag = document.createElement('td');
     descriptionTag.textContent = toDoItem;
     newRow.appendChild(descriptionTag);
-    action.addEventListener('click', function () {
-      if (toDoItem === addItemToCompleteTable) {
-        action.textContent = "Mark Complete";
-
-        newRow.remove();
-        addItemToCompleteTable(toDoItem);
-        actionTag.appendChild(action);
-        newRow.appendChild(actionTag);
-        complete.appendChild(newRow);
-      }
-    } else {
-        action.textContent = "Mark Incomplete";
-        action.addEventListener('click', function (){
-          newRow.remove();
-          addItemToIncompleteTable(toDoItem);
-          actionTag.appendChild(action);
-          newRow.appendChild(actionTag);
-          complete.appendChild(newRow);
-        })
-      }
+    action.textContent = "Mark Complete";
+    action.addEventListener('click', function (){
+      newRow.remove();
+      addItemToCompleteTable(toDoItem);
+    })
+    actionTag.appendChild(action);
+    newRow.appendChild(actionTag);
+    complete.appendChild(newRow);
   }
-
 
 </script>
 </body>
