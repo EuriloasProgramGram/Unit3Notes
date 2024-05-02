@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timers Practice</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body id="body">
+<div class="container">
+  <div class="content">
+    <button id="removed">Click Me!</button>
+    <div class="color">
+      <button id="interval">Find Color</button>
+      <button id="cancel">Color Chosen</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const myButton = document.getElementById('removed');
+  const repeatButton = document.getElementById("interval")
+  const cancelButton =document.getElementById("cancel")
+  const random = ["lightblue", "baby-pink", "baby-purple","lightgreen", "dull-blue", "crimson-red", "moss", "Lavender-web", "African-Violet", "Rose-Quartz", "Davey-Gray", "Raisin-black" ]; // make this random word
+  let color = random[Math.floor(Math.random() * random.length)];
+  let interval;
+
+  myButton.addEventListener('click', function (){
+    setTimeout(function (){
+      myButton.remove();
+    }, 3000);
+
+    console.log("Happens right away");
+  })
+
+  repeatButton.addEventListener('click', function (){
+    if(!interval){
+
+      interval = setInterval(function () {
+        removeBGColor();
+        color = random[Math.floor(Math.random() * random.length)];
+        document.getElementById("body").classList.add(color)
+        color.repeat(10)
+
+      }, 5000);
+    }
+  });
+
+  cancelButton.addEventListener('click', function (){
+    if (interval){
+      clearInterval(interval);
+      interval = null;
+    }
+  });
+  function removeBGColor(){
+    document.getElementById("body").classList.remove('crimson-red')
+    document.getElementById("body").classList.remove('baby-purple')
+    document.getElementById("body").classList.remove('lightblue')
+    document.getElementById("body").classList.remove('lightgreen')
+    document.getElementById("body").classList.remove('dull-blue')
+    document.getElementById("body").classList.remove('baby-pink')
+    document.getElementById("body").classList.remove('moss')
+    document.getElementById("body").classList.remove('Lavender-web')
+    document.getElementById("body").classList.remove('African-Violet')
+    document.getElementById("body").classList.remove('Rose-Quartz')
+    document.getElementById("body").classList.remove('Davey-Gray')
+    document.getElementById("body").classList.remove('Raisin-black')
+  }
+</script>
+</body>
+</html>

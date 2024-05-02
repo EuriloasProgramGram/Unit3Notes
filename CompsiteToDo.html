@@ -52,52 +52,51 @@
   const item = document.querySelector('input');
   const submitButton = document.getElementById('submit');
   const incomplete = document.getElementById('incomplete');
-  const complete = document.getElementById('complete');
+  const completes = document.getElementById('complete');
 
   submitButton.addEventListener('click', function (){
     let toDoItem = item.value;
     addItemToIncompleteTable(toDoItem);
     item.value = "";
-    addItemToCompleteTable(toDoItem);
-    item.value
   })
 
   function addItemToIncompleteTable(toDoItem) {
-    let newRow = document.createElement('tr');
-    let descriptionTag = document.createElement('td');
-    descriptionTag.textContent = toDoItem;
-    newRow.appendChild(descriptionTag);
-    let actionTag = document.createElement('td');
-    let action = document.createElement('button');
-    action.textContent = "Mark Incomplete";
-    action.addEventListener('click', function (){
-      newRow.remove();
-      addItemToIncompleteTable(toDoItem);
-    })
-    actionTag.appendChild(action);
-    newRow.appendChild(actionTag);
-    incomplete.appendChild(newRow);
+    add(toDoItem, false)
   }
 
   function addItemToCompleteTable(toDoItem) {
-    banana(toDoItem);
+    add(toDoItem, true);
   }
 
-  function banana (toDoItem){
+  function add(toDoItem, complete){
     let newRow = document.createElement('tr');
     let actionTag = document.createElement('td');
     let action = document.createElement('button');
     let descriptionTag = document.createElement('td');
     descriptionTag.textContent = toDoItem;
     newRow.appendChild(descriptionTag);
-    action.textContent = "Mark Complete";
-    action.addEventListener('click', function (){
-      newRow.remove();
-      addItemToCompleteTable(toDoItem);
-    })
-    actionTag.appendChild(action);
-    newRow.appendChild(actionTag);
-    complete.appendChild(newRow);
+    if(!complete){
+      action.textContent = "Mark Complete";
+      action.addEventListener('click', function (){
+          newRow.remove();
+          addItemToCompleteTable(toDoItem);
+      })
+      actionTag.appendChild(action);
+      newRow.appendChild(actionTag);
+      completes.appendChild(newRow);
+    } else{
+      action.textContent = "Mark Incomplete";
+      action.addEventListener('click', function (){
+        newRow.remove();
+        addItemToIncompleteTable(toDoItem);
+
+      })
+      actionTag.appendChild(action);
+      newRow.appendChild(actionTag);
+      incomplete.appendChild(newRow);
+    }
+
+
   }
 
 </script>
