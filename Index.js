@@ -8,16 +8,11 @@ let interval = setInterval(function () {
 let points = document.getElementById('score');
 let amount = 0;
 let clickAmount = 1;
-let doubleClick = 1 + 1;
 cardList.addEventListener('click', function(e) {
     console.log(e.target);
     amount += clickAmount;
     points.innerHTML = 'Points:' + amount;
-    if (amount >= points) {
-        amount -= points;
-    } else {
-        amount += doubleClick;
-    }
+
     if (e.target.matches('.cardList')) {
         return
     }
@@ -25,6 +20,10 @@ cardList.addEventListener('click', function(e) {
         e.target.classList.remove('active');
         e.target.classList.add('inactive');
         return
+    }
+    if (e.target.classList.contains('inactive')) {
+        amount++;
+        points.innerHTML = 'Points:' + amount;
     }
     e.target.remove();
     let children = cardList.children;
@@ -44,8 +43,8 @@ function addCard(value){
 }
 
 function buildBoard(){
-    for (let i=0; i<12; i++){
-        addCard('starter')
+    for (let i=0; i<1; i++){
+        addCard('1')
     }
 }
 
