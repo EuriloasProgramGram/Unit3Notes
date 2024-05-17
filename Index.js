@@ -43,8 +43,8 @@ function addCard(value){
 }
 
 function buildBoard(){
-    for (let i=0; i<1; i++){
-        addCard('1')
+    for (let i=0; i<12; i++){
+        addCard('Start!')
     }
 }
 
